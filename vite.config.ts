@@ -72,7 +72,7 @@ const exportWorkerElectronShimPlugin = () => {
           return process.env.XDG_CONFIG_HOME || join(homedir(), '.config')
         }
         const getPath = (name) => {
-          if (name === 'userData') return workerUserDataPath() || join(appDataPath(), 'WeFlow')
+          if (name === 'userData') return workerUserDataPath() || join(appDataPath(), 'WeFlow-UI-Refresh-v2')
           if (name === 'documents') return join(homedir(), 'Documents')
           if (name === 'desktop') return join(homedir(), 'Desktop')
           if (name === 'downloads') return join(homedir(), 'Downloads')
