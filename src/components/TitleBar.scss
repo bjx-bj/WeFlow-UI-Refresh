@@ -159,3 +159,34 @@
     margin: 0 4px;
   }
 }
+
+.title-bar {
+  height: 52px;
+  padding-left: 18px;
+  padding-right: 12px;
+}
+
+.title-brand {
+  gap: 10px;
+}
+
+.title-logo {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 4px 8px rgba(var(--primary-rgb), 0.2));
+}
+
+.titles {
+  color: var(--text-primary);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.title-sidebar-toggle {
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: var(--border-subtle, var(--border-color));
+    background: var(--surface-soft, var(--bg-hover));
+  }
+}
