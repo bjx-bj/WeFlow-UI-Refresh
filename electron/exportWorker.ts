@@ -146,7 +146,7 @@ if (config.userDataPath) {
   process.env.WEFLOW_USER_DATA_PATH = config.userDataPath
   process.env.WEFLOW_CONFIG_CWD = config.userDataPath
 }
-process.env.WEFLOW_PROJECT_NAME = process.env.WEFLOW_PROJECT_NAME || 'WeFlow'
+process.env.WEFLOW_PROJECT_NAME = process.env.WEFLOW_PROJECT_NAME || 'WeFlow-UI-Refresh'
 
 // 消息导出强制走 WeLive 引擎（不提供 legacy 回退开关）；
 // 联系人导出不是消息导出，由 worker 内置流程独立处理。
