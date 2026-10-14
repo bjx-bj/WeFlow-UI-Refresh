@@ -316,9 +316,9 @@ export class ConfigService {
     }
 
     const storeOptions: any = {
-      name: 'WeFlow-config',
+      name: 'WeFlow-UI-Refresh-config',
       defaults,
-      projectName: String(process.env.WEFLOW_PROJECT_NAME || 'WeFlow').trim() || 'WeFlow'
+      projectName: String(process.env.WEFLOW_PROJECT_NAME || 'WeFlow-UI-Refresh').trim() || 'WeFlow-UI-Refresh'
     }
     const runningInWorker = process.env.WEFLOW_WORKER === '1'
     if (runningInWorker) {
@@ -335,7 +335,7 @@ export class ConfigService {
       if (message.includes('projectName')) {
         const fallbackOptions = {
           ...storeOptions,
-          projectName: 'WeFlow',
+          projectName: 'WeFlow-UI-Refresh',
           cwd: storeOptions.cwd || process.env.WEFLOW_CONFIG_CWD || process.env.WEFLOW_USER_DATA_PATH || process.cwd()
         }
         this.store = new Store<ConfigSchema>(fallbackOptions)
@@ -1203,4 +1203,3 @@ export class ConfigService {
     this.unlockPassword = null
   }
 }
-
