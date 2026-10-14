@@ -50,6 +50,14 @@ import { getAIProviderCatalog, listModelsFromProvider, resolveAIModelMetadata } 
 import { electronNetProxy } from './services/electronNetProxy'
 import { RelayOneService } from './services/relayOneService'
 
+// 个人构建使用独立用户数据空间，避免读取官方 WeFlow 或旧版本地配置。
+// 首次启动会重新进入引导流程，重新询问数据库目录、账号和外部组件路径。
+const FRESH_PROFILE_NAME = 'WeFlow-UI-Refresh-v2'
+try {
+  app.setPath('userData', join(app.getPath('appData'), FRESH_PROFILE_NAME))
+} catch (error) {
+  console.warn('[profile] 设置独立用户数据目录失败:', error)
+}
 function traceKeyFlow(stage: string, data?: unknown): void {
   try {
     const logPath = join(app.getPath('userData'), 'logs', 'keyflow.log')
